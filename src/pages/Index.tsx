@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
@@ -6,7 +5,8 @@ import { Card, CardContent } from "@/components/ui/card";
 import { BookOpen, CheckCircle, GraduationCap, UserPlus } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import CourseCard from "@/components/CourseCard";
-import { courses } from "@/data/mockData";
+import CourseCategoryCard from "@/components/CourseCategoryCard";
+import { courses, courseCategories } from "@/data/mockData";
 
 const features = [
   {
@@ -34,7 +34,7 @@ const Index = () => {
       <Navbar />
       
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-primary-light to-white py-20 px-4">
+      <section className="bg-gradient-to-br from-primary-light via-white to-accent-light py-20 px-4">
         <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center">
           <div className="lg:w-1/2 text-center lg:text-left mb-10 lg:mb-0">
             <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
@@ -67,8 +67,25 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Features Section */}
+      {/* Categories Section */}
       <section className="py-16 px-4 bg-white">
+        <div className="max-w-7xl mx-auto">
+          <h2 className="text-3xl font-bold text-center mb-4">Explorez nos catégories</h2>
+          <p className="text-gray-600 text-center mb-12">Découvrez une large gamme de cours dans différents domaines</p>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {courseCategories.map((category) => (
+              <CourseCategoryCard
+                key={category.id}
+                {...category}
+                courseCount={courses.filter((course) => course.category === category.name).length}
+              />
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Features Section */}
+      <section className="py-16 px-4 bg-gradient-to-br from-accent-light to-primary-light">
         <div className="max-w-7xl mx-auto">
           <h2 className="text-3xl font-bold text-center mb-12">Pourquoi choisir notre plateforme ?</h2>
           <div className="grid md:grid-cols-3 gap-8">
@@ -114,7 +131,7 @@ const Index = () => {
       </section>
 
       {/* Testimonials */}
-      <section className="py-16 px-4 bg-white">
+      <section className="py-16 px-4 bg-secondary">
         <div className="max-w-7xl mx-auto">
           <h2 className="text-3xl font-bold text-center mb-12">Ce que disent nos utilisateurs</h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -160,7 +177,7 @@ const Index = () => {
       </section>
 
       {/* Call to Action */}
-      <section className="py-20 px-4 bg-primary text-white">
+      <section className="py-20 px-4 bg-gradient-to-br from-primary via-accent to-primary-dark text-white">
         <div className="max-w-5xl mx-auto text-center">
           <h2 className="text-3xl md:text-4xl font-bold mb-6">Prêt à commencer votre parcours d'apprentissage ?</h2>
           <p className="text-xl mb-8 text-white/90">
