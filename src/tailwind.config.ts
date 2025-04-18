@@ -1,12 +1,13 @@
+
 import type { Config } from "tailwindcss";
 
 export default {
   darkMode: ["class"],
   content: [
-    "./pages/**/*.{ts,tsx}",
-    "./components/**/*.{ts,tsx}",
-    "./app/**/*.{ts,tsx}",
-    "./src/**/*.{ts,tsx}",
+    "./pages/**/*.{ts,tsx,js,jsx}",
+    "./components/**/*.{ts,tsx,js,jsx}",
+    "./app/**/*.{ts,tsx,js,jsx}",
+    "./src/**/*.{ts,tsx,js,jsx}",
   ],
   prefix: "",
   theme: {
@@ -25,35 +26,35 @@ export default {
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
         primary: {
-          DEFAULT: "#6366f1", // Indigo-500
-          light: "#e0e7ff", // Indigo-100
-          dark: "#4f46e5", // Indigo-600
-          foreground: "hsl(var(--primary-foreground))",
+          DEFAULT: "#2563eb", // Un bleu professionnel
+          light: "#dbeafe", // Bleu clair pour les arrière-plans
+          dark: "#1e40af", // Bleu foncé pour les hover
+          foreground: "#ffffff"
         },
         secondary: {
-          DEFAULT: "#f1f5f9", // Slate-100
-          dark: "#94a3b8", // Slate-400
-          foreground: "#1e293b", // Slate-800
+          DEFAULT: "#f8fafc", // Gris très clair
+          dark: "#64748b", // Gris moyen
+          foreground: "#1e293b", // Gris foncé
         },
         accent: {
-          DEFAULT: "#8b5cf6", // Violet-500
-          light: "#f3e8ff", // Violet-100
-          dark: "#7c3aed", // Violet-600
+          DEFAULT: "#6366f1", // Indigo
+          light: "#e0e7ff", // Indigo clair
+          dark: "#4f46e5", // Indigo foncé
         },
         success: {
-          DEFAULT: "#22c55e", // Green-500
-          light: "#dcfce7", // Green-100
-          dark: "#16a34a", // Green-600
+          DEFAULT: "#059669", // Vert professionnel
+          light: "#d1fae5",
+          dark: "#047857",
         },
         warning: {
-          DEFAULT: "#f59e0b", // Amber-500
-          light: "#fef3c7", // Amber-100
-          dark: "#d97706", // Amber-600
+          DEFAULT: "#ea580c", // Orange professionnel
+          light: "#ffedd5",
+          dark: "#c2410c",
         },
         destructive: {
-          DEFAULT: "#ef4444", // Red-500
-          light: "#fee2e2", // Red-100
-          dark: "#dc2626", // Red-600
+          DEFAULT: "#dc2626", // Rouge professionnel
+          light: "#fee2e2",
+          dark: "#b91c1c",
         },
       },
       borderRadius: {
